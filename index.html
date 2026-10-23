@@ -1,0 +1,773 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta charset="utf-8">
+<title>Izzat Naimullah Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Muhammad Izzat Naimullah: performance marketer in Kuala Lumpur. Meta Ads results, AI UGC video ads, landing pages and launches.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one continuous dark world. A fixed canvas (grid + drifting glow + a growth line) keeps flowing behind every section as you scroll; content sits on glass cards. Single dark theme by design. */
+:root {
+  color-scheme: dark;
+  --bg: #0b1218;
+  --surface: rgba(20, 30, 40, 0.72);
+  --fg: #eef3f5;
+  --muted: #9fb0ba;
+  --line: rgba(255, 255, 255, 0.09);
+  --accent: #3cc4b2;
+  --accent-soft: rgba(60, 196, 178, 0.14);
+  --ink: #0b1218;
+  --ink-2: rgba(22, 37, 47, 0.85);
+  --ink-fg: #eef3f5;
+  --ink-muted: #9fb0ba;
+  --ink-line: rgba(255, 255, 255, 0.1);
+  --hi: #3cc4b2;
+  --hi-2: #e8a93a;
+  --sales: #1f9c8c;
+  --spend: #b8801c;
+  --display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", sans-serif;
+  --body: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --step--1: 0.8125rem;
+  --step-0: 1rem;
+  --step-1: 1.25rem;
+  --step-2: clamp(1.6rem, 3.6vw, 2.25rem);
+  --step-3: clamp(2.4rem, 7vw, 4.5rem);
+  --step-4: clamp(3rem, 10vw, 6rem);
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: var(--step-0); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+#bg { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; display: block; }
+.page { position: relative; z-index: 1; }
+.panel, .brand, .proj, .svc, .n-cell, .cert, .stage { -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.wrap { max-width: 72rem; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; }
+p { margin: 0; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible, summary:focus-visible, .bar-hit:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.label { font-family: var(--mono); font-size: var(--step--1); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.num { font-variant-numeric: tabular-nums; }
+
+/* ---------- Ink ---------- */
+.ink { color: var(--ink-fg); }
+.ink .label { color: var(--ink-muted); }
+.top { padding-block: 1.25rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; border-bottom: 1px solid var(--ink-line); }
+.top nav { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+.top nav a { color: var(--ink-muted); text-decoration: none; font-size: 0.9375rem; }
+.top nav a:hover { color: var(--ink-fg); }
+.mark { font-family: var(--display); font-weight: 800; font-size: 1.125rem; color: var(--ink-fg); text-decoration: none; display: inline-flex; align-items: center; gap: 0.6rem; }
+.mark i { width: 1.75rem; height: 1.75rem; border-radius: 6px; background: var(--hi); color: var(--ink); display: grid; place-items: center; font-style: normal; font-size: 0.875rem; }
+
+.hero { padding-block: clamp(2.5rem, 7vw, 5rem) clamp(2rem, 5vw, 3.5rem); display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+.hero .label { display: inline-flex; align-items: center; gap: 0.5rem; }
+.dot { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--hi); box-shadow: 0 0 0 4px color-mix(in srgb, var(--hi) 25%, transparent); }
+.hero h1 { font-size: var(--step-3); font-weight: 800; line-height: 0.96; letter-spacing: -0.035em; margin-top: 1.25rem; }
+.hero h1 span { color: var(--hi); }
+.hero .lede { font-size: var(--step-1); max-width: 34rem; margin-top: 1.5rem; line-height: 1.5; }
+.hero .lede b { color: var(--hi); font-weight: 600; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
+
+.proof { border: 1px solid var(--ink-line); border-radius: 14px; padding: clamp(1.25rem, 3vw, 1.75rem); display: grid; gap: 1.1rem; background: linear-gradient(160deg, var(--ink-2), var(--ink)); min-width: 0; position: relative; overflow: hidden; }
+.proof::after { content: ""; position: absolute; right: -30%; top: -40%; width: 80%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, color-mix(in srgb, var(--hi) 22%, transparent), transparent 65%); pointer-events: none; }
+.proof .big { font-family: var(--display); font-weight: 800; font-size: var(--step-4); line-height: 0.88; letter-spacing: -0.045em; color: var(--hi); }
+.proof .big small { font-size: 0.36em; letter-spacing: 0; margin-right: 0.12em; color: var(--ink-fg); vertical-align: 0.9em; }
+.proof .sub { color: var(--ink-muted); font-size: 0.9375rem; max-width: 30ch; }
+.spark { width: 100%; height: 56px; display: block; }
+.proof-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--ink-line); padding-top: 0.9rem; gap: 0.5rem; }
+.proof-row div { display: grid; gap: 0.1rem; min-width: 0; }
+.proof-row b { font-family: var(--display); font-size: var(--step-1); font-weight: 700; }
+
+/* Logo wall */
+.logos { padding-block: 1.5rem clamp(2.5rem, 6vw, 3.5rem); }
+.logos .label { display: block; margin-bottom: 1rem; }
+.logo-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0.6rem; }
+.logo-tile { aspect-ratio: 16 / 9; border-radius: 10px; display: grid; place-items: center; transition: transform .25s ease; }
+.logo-tile:hover { transform: translateY(-3px); }
+.logo-tile.nv { background: #76b900; }
+.logo-tile.nv svg { width: 46%; fill: #000; }
+.logo-tile img { max-width: 52%; max-height: 40%; width: auto; height: auto; filter: brightness(0) invert(1); }
+.logo-tile.acer { background: #83b81a; }
+.logo-tile.dell { background: #007db8; }
+.logo-tile.dell img { max-height: 52%; }
+.logo-tile.samsung { background: #1428a0; }
+.logo-tile.corsair { background: #0a0a0a; }
+.logo-tile.kingston { background: #e2231a; }
+.logo-tile.corsair img, .logo-tile.kingston img { max-width: 66%; max-height: 48%; }
+.logo-grid > img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 10px; display: block; transition: transform .25s ease; }
+.logo-grid > img:hover { transform: translateY(-3px); }
+
+/* ---------- Sections ---------- */
+section { padding-block: clamp(3rem, 7vw, 4.75rem); }
+.sec-head { display: grid; gap: 0.6rem; margin-bottom: 2rem; }
+.sec-head h2 { font-size: var(--step-2); font-weight: 800; letter-spacing: -0.025em; line-height: 1.05; }
+.sec-head p.intro { color: var(--muted); max-width: 46rem; }
+hr.rule { border: 0; border-top: 1px solid var(--line); margin: 0; }
+
+/* Numbers band */
+.numbers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+.n-cell { background: rgba(14, 22, 30, 0.85); padding: clamp(1.1rem, 3vw, 1.75rem); display: grid; gap: 0.3rem; align-content: start; min-width: 0; }
+.n-cell b { font-family: var(--display); font-weight: 800; font-size: clamp(2rem, 5.5vw, 3.25rem); letter-spacing: -0.035em; line-height: 1; }
+.n-cell b em { font-style: normal; color: var(--accent); }
+.n-cell span { color: var(--muted); font-size: 0.9375rem; }
+.n-cell .label { font-size: 0.6875rem; }
+
+/* Results */
+.results-grid { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 1.25rem; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: clamp(1rem, 2.5vw, 1.5rem); min-width: 0; }
+.panel h3 { font-size: 1.125rem; font-weight: 700; }
+.panel-sub { color: var(--muted); font-size: 0.875rem; margin-top: 0.15rem; }
+.legend { display: flex; gap: 1.25rem; flex-wrap: wrap; margin-top: 0.85rem; font-size: 0.875rem; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 0.4rem; }
+.legend i { width: 0.75rem; height: 0.75rem; border-radius: 3px; display: inline-block; }
+.chart-wrap { position: relative; margin-top: 0.75rem; }
+.chart-wrap svg { width: 100%; height: auto; display: block; overflow: visible; }
+.chart-wrap .axis text { fill: var(--muted); font-family: var(--mono); font-size: 11px; }
+.chart-wrap .grid line { stroke: var(--line); stroke-width: 1; }
+.chart-wrap .bar-spend { fill: var(--spend); }
+.chart-wrap .bar-sales { fill: var(--sales); }
+.chart-wrap .vlabel { fill: var(--fg); font-family: var(--mono); font-size: 10.5px; }
+.chart-wrap .bar-hit { fill: transparent; }
+.chart-wrap .bar-hit:hover, .chart-wrap .bar-hit:focus { fill: color-mix(in srgb, var(--fg) 5%, transparent); }
+.tip { position: absolute; pointer-events: none; background: var(--fg); color: var(--bg); font-size: 0.8125rem; line-height: 1.45; padding: 0.55rem 0.7rem; border-radius: 6px; white-space: nowrap; transform: translate(-50%, -100%); z-index: 2; }
+.tip b { font-family: var(--display); }
+details.table-view { margin-top: 0.9rem; font-size: 0.875rem; }
+details.table-view summary { cursor: pointer; color: var(--muted); }
+.tbl { overflow-x: auto; margin-top: 0.6rem; }
+.tbl table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
+.tbl th, .tbl td { text-align: right; padding: 0.35rem 0.5rem; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.tbl th:first-child, .tbl td:first-child { text-align: left; }
+.tbl th { font-weight: 600; color: var(--muted); font-size: 0.8125rem; }
+.brand-cards { display: grid; gap: 1rem; align-content: start; }
+.brand { border: 1px solid var(--line); border-radius: 14px; padding: 1.1rem 1.25rem; display: grid; gap: 0.75rem; background: var(--surface); min-width: 0; }
+.brand-top { display: flex; justify-content: space-between; align-items: baseline; gap: 0.75rem; flex-wrap: wrap; }
+.brand-top h3 { font-size: 1.125rem; font-weight: 700; }
+.roas { font-family: var(--display); font-weight: 800; font-size: 2.25rem; letter-spacing: -0.03em; color: var(--accent); line-height: 1; }
+.roas small { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); font-weight: 400; margin-left: 0.25rem; letter-spacing: 0.04em; }
+.brand dl { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.5rem; margin: 0; }
+.brand dt { font-size: 0.75rem; color: var(--muted); }
+.brand dd { margin: 0; font-weight: 600; font-variant-numeric: tabular-nums; }
+.source { color: var(--muted); font-size: 0.8125rem; margin-top: 1.25rem; max-width: 56rem; }
+
+/* Creative */
+.creative-band { color: var(--ink-fg); }
+.creative-band .label { color: var(--ink-muted); }
+.creative-band .sec-head p.intro { color: var(--ink-muted); }
+.phones { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(0.75rem, 2.5vw, 1.5rem); max-width: 52rem; }
+.phone { display: grid; gap: 0.6rem; min-width: 0; }
+.phone .screen { position: relative; border-radius: 22px; border: 6px solid #05090c; background: #05090c; overflow: hidden; aspect-ratio: 9 / 16; max-width: 100%; box-shadow: 0 20px 40px -20px rgba(0,0,0,.6); }
+.phone video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.phone .tag { position: absolute; left: 8px; top: 8px; font-family: var(--mono); font-size: 0.6875rem; background: rgba(5,9,12,.7); color: #eef3f5; padding: 0.15rem 0.45rem; border-radius: 999px; }
+.phone p { font-size: 0.875rem; color: var(--ink-muted); }
+.phone p b { color: var(--ink-fg); font-weight: 600; display: block; }
+.reel { margin-top: 2.5rem; }
+.reel-head { display: flex; align-items: baseline; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 0.9rem; }
+.reel-head h3 { font-size: 1.375rem; font-weight: 800; letter-spacing: -0.02em; }
+.reel-head span { color: var(--ink-muted); font-size: 0.875rem; }
+.reel-row { display: flex; gap: 0.75rem; overflow-x: auto; align-items: flex-start; padding-bottom: 0.6rem; scroll-snap-type: x mandatory; }
+.reel-row .phone { flex: 0 0 clamp(9.5rem, 22vw, 12.5rem); scroll-snap-align: start; }
+.phone .screen img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.win { position: absolute; left: 8px; bottom: 8px; font-family: var(--mono); font-size: 0.75rem; font-weight: 500; background: var(--hi); color: #0b1218; padding: 0.2rem 0.55rem; border-radius: 999px; }
+.sqw { position: relative; margin: 0; flex: 0 0 auto; scroll-snap-align: start; }
+.reel-row .sq { flex: 0 0 clamp(14rem, 34vw, 19rem); width: clamp(14rem, 34vw, 19rem); aspect-ratio: 1; object-fit: cover; border-radius: 14px; display: block; scroll-snap-align: start; }
+.posters { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(11rem, 1fr); gap: 0.75rem; overflow-x: auto; margin-top: 2.25rem; padding-bottom: 0.5rem; scroll-snap-type: x mandatory; }
+.posters img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 12px; display: block; scroll-snap-align: start; }
+.pipeline { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; align-items: center; }
+.pipeline span { font-family: var(--mono); font-size: 0.75rem; border: 1px solid var(--ink-line); color: var(--ink-fg); padding: 0.3rem 0.65rem; border-radius: 999px; }
+.pipeline i { color: var(--ink-muted); font-style: normal; }
+
+/* Projects */
+.projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+.proj { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: clamp(1.25rem, 3vw, 1.75rem); display: grid; gap: 0.9rem; align-content: start; min-width: 0; }
+.proj .name { font-family: var(--mono); font-size: 0.75rem; color: var(--accent); background: var(--accent-soft); padding: 0.2rem 0.5rem; border-radius: 4px; justify-self: start; }
+.proj h3 { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.025em; line-height: 1.05; }
+.proj .where { color: var(--muted); font-size: 0.9375rem; margin-top: -0.4rem; }
+.proj ul { margin: 0; padding-left: 1.1rem; display: grid; gap: 0.4rem; font-size: 0.9375rem; }
+.proj li::marker { color: var(--accent); }
+.proj .stats { display: flex; flex-wrap: wrap; gap: 0.5rem 1.75rem; padding-top: 0.9rem; border-top: 1px dashed var(--line); }
+.stat { display: grid; gap: 0.05rem; }
+.stat b { font-family: var(--display); font-size: 1.75rem; font-weight: 800; color: var(--accent); font-variant-numeric: tabular-nums; line-height: 1.1; letter-spacing: -0.02em; }
+.stat span { color: var(--muted); font-size: 0.8125rem; }
+.proj.wide { grid-column: 1 / -1; }
+.thumbs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.5rem; }
+.thumbs img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; display: block; }
+
+/* Services */
+.services { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+.svc { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 1.4rem; display: grid; gap: 0.7rem; align-content: start; min-width: 0; }
+.svc .ico { width: 2.5rem; height: 2.5rem; border-radius: 10px; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; }
+.svc .ico svg { width: 1.3rem; height: 1.3rem; }
+.svc h3 { font-size: 1.125rem; font-weight: 700; }
+.svc p { color: var(--muted); font-size: 0.9375rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.tags span { font-family: var(--mono); font-size: 0.6875rem; padding: 0.15rem 0.5rem; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); }
+
+/* Funnel */
+.funnel { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0.5rem; }
+.stage { padding: 1rem; display: grid; gap: 0.3rem; align-content: start; min-width: 0; border-radius: 12px; border: 1px solid var(--line); background: color-mix(in srgb, var(--accent) var(--mix), rgba(14, 22, 30, 0.8)); }
+.stage:nth-child(1) { --mix: 6%; } .stage:nth-child(2) { --mix: 11%; } .stage:nth-child(3) { --mix: 16%; } .stage:nth-child(4) { --mix: 22%; } .stage:nth-child(5) { --mix: 30%; }
+.stage .n { font-family: var(--mono); font-size: 0.6875rem; color: var(--accent); letter-spacing: 0.05em; }
+.stage b { font-family: var(--display); font-weight: 700; font-size: 1.0625rem; }
+.stage span.m { font-size: 0.8125rem; color: var(--muted); line-height: 1.5; }
+.funnel-note { color: var(--muted); max-width: 46rem; margin-top: 1.25rem; }
+
+/* Achievements */
+.ach { display: inline-flex; align-items: center; gap: 0.55rem; justify-self: start; margin: 0; padding: 0.45rem 0.8rem; border-radius: 10px; background: rgba(232, 169, 58, 0.14); border: 1px solid rgba(232, 169, 58, 0.38); color: #f3c06a; font-size: 0.9375rem; line-height: 1.35; }
+.ach svg { width: 1.05rem; height: 1.05rem; flex: 0 0 auto; }
+.ach b { font-weight: 700; color: #ffd27f; }
+.step .ach-line { font-style: normal; font-size: 0.8125rem; font-weight: 600; color: #f3c06a; line-height: 1.4; margin-top: 0.2rem; }
+
+/* Skills */
+.know-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+.know { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: clamp(1.25rem, 3vw, 1.75rem); min-width: 0; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.know h3 { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.02em; }
+.know-sub { color: var(--muted); font-size: 0.9375rem; margin-top: 0.25rem; }
+.know ul { list-style: none; margin: 1.25rem 0 0; padding: 0; display: grid; }
+.know li { display: grid; grid-template-columns: minmax(0, 11rem) minmax(0, 1fr); gap: 0.25rem 1rem; padding-block: 0.7rem; border-top: 1px solid var(--line); }
+.know li b { font-weight: 600; color: var(--accent); }
+.know li span { color: var(--muted); font-size: 0.9375rem; }
+.tool-head { font-size: 1.25rem; font-weight: 800; letter-spacing: -0.02em; margin: 0 0 0.9rem; }
+.tool-grid + .tool-head { margin-top: 2.25rem; }
+.tool-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.75rem; }
+.tool { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 1rem 1.1rem; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0.85rem; align-items: start; min-width: 0; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); transition: transform .25s ease, border-color .25s ease; }
+.tool:hover { transform: translateY(-3px); border-color: color-mix(in srgb, var(--c, var(--accent)) 55%, transparent); }
+.tool-grid.platforms { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.tool-grid.platforms .tool.main { grid-column: span 2; }
+.tool .mono { width: 2.5rem; height: 2.5rem; border-radius: 10px; background: var(--c); color: var(--t, #fff); display: grid; place-items: center; font-family: var(--display); font-weight: 800; font-size: 1.05rem; }
+.tool b { display: block; font-family: var(--display); font-size: 1.0625rem; font-weight: 700; line-height: 1.25; }
+.tool > div > span { display: block; color: var(--muted); font-size: 0.875rem; line-height: 1.45; margin-top: 0.15rem; }
+.tool .tags { margin-top: 0.6rem; }
+
+/* Career */
+.track { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 0; position: relative; }
+.track::before { content: ""; position: absolute; left: 0; right: 0; top: 0.45rem; height: 2px; background: var(--line); }
+.step { position: relative; padding: 1.6rem 1rem 0 0; display: grid; gap: 0.2rem; min-width: 0; }
+.step::before { content: ""; position: absolute; top: 0; left: 0; width: 0.95rem; height: 0.95rem; border-radius: 50%; background: var(--surface); border: 2px solid var(--accent); }
+.step.now::before { background: var(--accent); }
+.step .yr { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); }
+.step b { font-family: var(--display); font-size: 1.0625rem; font-weight: 700; line-height: 1.2; }
+.step span { font-size: 0.875rem; color: var(--muted); line-height: 1.4; }
+.certs { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 2.25rem; }
+.cert { display: inline-flex; align-items: center; gap: 0.5rem; border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 0.4rem 0.9rem 0.4rem 0.5rem; font-size: 0.875rem; text-decoration: none; color: var(--fg); }
+.cert i { width: 1.4rem; height: 1.4rem; border-radius: 50%; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; font-style: normal; font-size: 0.75rem; }
+.cert small { color: var(--muted); }
+
+/* Contact */
+.contact-band { color: var(--ink-fg); }
+.contact-band .label { color: var(--ink-muted); }
+.contact-band h2 { font-size: var(--step-3); font-weight: 800; letter-spacing: -0.035em; line-height: 1; margin-top: 1rem; max-width: 16ch; }
+.contact-band h2 span { color: var(--hi); }
+.mail { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1rem; margin-top: 1.75rem; }
+.mail .addr { font-family: var(--mono); font-size: clamp(1rem, 3.2vw, 1.375rem); user-select: all; overflow-wrap: anywhere; }
+.btn { font: 600 0.9375rem/1 var(--body); border: 1px solid var(--ink-fg); background: var(--ink-fg); color: var(--ink); padding: 0.75rem 1.15rem; border-radius: 999px; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; }
+.btn.ghost { background: transparent; color: var(--ink-fg); border-color: var(--ink-line); }
+.btn.hi { background: var(--hi); border-color: var(--hi); color: var(--ink); }
+.btn:hover { opacity: 0.9; }
+.copied { font-size: 0.875rem; color: var(--hi); min-height: 1.2em; margin-top: 0.5rem; }
+footer { padding-block: 1.5rem 3rem; color: var(--ink-muted); font-size: 0.8125rem; border-top: 1px solid var(--ink-line); }
+
+@media (max-width: 960px) {
+  .services { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tool-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tool-grid.platforms { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tool-grid.platforms .tool.main { grid-column: 1 / -1; }
+}
+@media (max-width: 560px) {
+  .tool-grid, .tool-grid.platforms { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 860px) {
+  .hero, .results-grid, .projects, .know-grid { grid-template-columns: minmax(0, 1fr); }
+  .funnel { grid-template-columns: minmax(0, 1fr); }
+  .track { grid-template-columns: minmax(0, 1fr); }
+  .track::before { left: 0.43rem; right: auto; top: 0; bottom: 0; width: 2px; height: auto; }
+  .step { padding: 0 0 1.25rem 2rem; }
+}
+@media (max-width: 640px) {
+  .numbers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .services { grid-template-columns: minmax(0, 1fr); }
+  .know li { grid-template-columns: minmax(0, 1fr); }
+  .logo-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.4rem; }
+  .phones { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.5rem; }
+  .phone .screen { border-width: 4px; border-radius: 16px; }
+  .phone p { font-size: 0.75rem; }
+  .thumbs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .top nav { display: none; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero > * { animation: rise 0.6s cubic-bezier(.2,.7,.2,1) both; }
+  .hero > *:nth-child(2) { animation-delay: 0.1s; }
+  @keyframes rise { from { transform: translateY(12px); } to { transform: none; } }
+}
+</style>
+
+<canvas id="bg" aria-hidden="true"></canvas>
+<div class="page">
+<div class="ink">
+  <div class="wrap">
+    <div class="top">
+      <a class="mark" href="#top"><i aria-hidden="true">IN</i>Izzat Naimullah</a>
+      <nav aria-label="Sections">
+        <a href="#creative">Creative</a>
+        <a href="#projects">Projects</a>
+        <a href="#career">Career</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+
+    <header class="hero" id="top">
+      <div>
+        <p class="label"><span class="dot" aria-hidden="true"></span>Performance marketer · Kuala Lumpur</p>
+        <h1>Muhammad Izzat <span>Naimullah</span></h1>
+        <p class="lede">I turn ad spend into sales. Over <b>RM20 million</b> in ad spend managed across my career, and most recently <b>RM985k</b> in sales from RM266k of Meta Ads in five months, plus the AI UGC creative, landing pages and tools behind it.</p>
+        <div class="cta-row">
+          <a class="btn hi" href="#numbers">See the results</a>
+          <a class="btn ghost" href="#contact">Contact me</a>
+        </div>
+      </div>
+      <aside class="proof" aria-label="Headline result">
+        <p class="label">Meta Ads · May – Sep 2026</p>
+        <p class="big num"><small>RM</small>984,866</p>
+        <p class="sub">in sales from RM266,328 ad spend, across two health brands</p>
+        <div class="proof-row">
+          <div><span class="label">ROAS</span><b class="num">3.70x</b></div>
+          <div><span class="label">AKAR ROAS</span><b class="num">3.8x</b></div>
+          <div><span class="label">Tonik ROAS</span><b class="num">2.7x</b></div>
+        </div>
+      </aside>
+    </header>
+
+    <div class="logos">
+      <span class="label">Brands I've run campaigns with</span>
+      <div class="logo-grid">
+        <img src="media/logos/amd.jpg" alt="AMD">
+        <img src="media/logos/asus.jpg" alt="ASUS">
+        <img src="media/logos/razer.jpg" alt="Razer">
+        <div class="logo-tile corsair" role="img" aria-label="Corsair"><img src="media/logos/corsair.svg" alt=""></div>
+        <div class="logo-tile kingston" role="img" aria-label="Kingston"><img src="media/logos/kingston.png" alt=""></div>
+        <img src="media/logos/msi.jpg" alt="MSI">
+        <img src="media/logos/lenovo.jpg" alt="Lenovo">
+        <div class="logo-tile samsung" role="img" aria-label="Samsung"><img src="media/logos/samsung.svg" alt=""></div>
+        <img src="media/logos/intel.jpg" alt="Intel">
+        <div class="logo-tile dell" role="img" aria-label="Dell"><img src="media/logos/dell.svg" alt=""></div>
+        <img src="media/logos/hp.jpg" alt="HP">
+        <img src="media/logos/gigabyte.jpg" alt="GIGABYTE">
+        <div class="logo-tile nv" role="img" aria-label="NVIDIA"><svg viewBox="316.2 33.8 630.2 118.2" aria-hidden="true"><path d="M578.2 34v118h33.3V34h-33.3zm-262-.2v118.1h33.6V60.2l26.2.1c8.6 0 14.6 2.1 18.7 6.5 5.3 5.6 7.4 14.7 7.4 31.2v53.9h32.6V86.7c0-46.6-29.7-52.9-58.7-52.9h-59.8zm315.7.2v118h54c28.8 0 38.2-4.8 48.3-15.5 7.2-7.5 11.8-24.1 11.8-42.2 0-16.6-3.9-31.4-10.8-40.6C723 37.2 705.2 34 678.6 34h-46.7zm33 25.6h14.3c20.8 0 34.2 9.3 34.2 33.5s-13.4 33.6-34.2 33.6h-14.3V59.6zM530.2 34l-27.8 93.5L475.8 34h-36l38 118h48l38.4-118h-34zm231.4 118h33.3V34h-33.3v118zM855 34l-46.5 117.9h32.8l7.4-20.9h55l7 20.8h35.7L899.5 34H855zm21.6 21.5l20.2 55.2h-41l20.8-55.2z"/></svg></div>
+        <div class="logo-tile acer" role="img" aria-label="Acer"><img src="media/logos/acer.svg" alt=""></div>
+        <img src="media/logos/logitech.jpg" alt="Logitech">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <section id="numbers">
+    <div class="numbers">
+      <div class="n-cell"><span class="label">Sales</span><b class="num">RM<em>985k</em></b><span>from Meta Ads, May – Sep 2026</span></div>
+      <div class="n-cell"><span class="label">Return on ad spend</span><b class="num"><em>3.7x</em></b><span>every RM1 in ads returned RM3.70</span></div>
+      <div class="n-cell"><span class="label">Ad budget managed</span><b class="num">RM<em>266k</em></b><span>in five months</span></div>
+      <div class="n-cell"><span class="label">Store launch</span><b class="num"><em>5,000+</em></b><span>walk-ins on Megastore 2 opening day</span></div>
+      <div class="n-cell"><span class="label">Retail outlets</span><b class="num"><em>20</em></b><span>campaigns planned across Malaysia</span></div>
+      <div class="n-cell"><span class="label">In digital marketing</span><b class="num"><em>8+</em> yrs</b><span>since 2017, MY · EU · CN · BR markets</span></div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section id="skills">
+    <div class="sec-head"><p class="label">Toolkit</p><h2>The platforms and tools I work in</h2></div>
+
+    <h3 class="tool-head">Ad platforms</h3>
+    <div class="tool-grid platforms">
+      <div class="tool main"><span class="mono" style="--c:#0866ff">M</span><div><b>Meta Ads</b><span>Facebook &amp; Instagram · my main platform</span><div class="tags"><span>ABO · CBO</span><span>Advantage+</span><span>Cost cap · ROAS goal</span><span>Pixel + CAPI</span><span>Automated rules</span><span>Click-to-WhatsApp</span></div></div></div>
+      <div class="tool"><span class="mono" style="--c:#4285f4">G</span><div><b>Google Ads</b><span>Search and display campaigns</span></div></div>
+      <div class="tool"><span class="mono" style="--c:#111;--t:#25f4ee">T</span><div><b>TikTok Ads</b><span>In-feed video ads</span></div></div>
+      <div class="tool"><span class="mono" style="--c:#000;--t:#fff">X</span><div><b>X Ads</b><span>Promoted posts</span></div></div>
+      <div class="tool"><span class="mono" style="--c:#0a66c2">in</span><div><b>LinkedIn Ads</b><span>B2B campaigns</span></div></div>
+      <div class="tool"><span class="mono" style="--c:#111;--t:#fe2c55">抖</span><div><b>Douyin</b><span>China short video, via Ocean Engine</span></div></div>
+      <div class="tool"><span class="mono" style="--c:#ff2442">小</span><div><b>Xiaohongshu (XHS)</b><span>RED notes and ads, China</span></div></div>
+      <div class="tool"><span class="mono" style="--c:#ff7300">K</span><div><b>Kwai Ads</b><span>Short-video ads</span></div></div>
+      <div class="tool"><span class="mono" style="--c:#ffe600;--t:#0b1218">L8</span><div><b>Lemon8</b><span>Lifestyle content and ads</span></div></div>
+    </div>
+
+    <h3 class="tool-head">AI tools</h3>
+    <div class="tool-grid">
+      <div class="tool"><span class="mono" style="--c:#10a37f">G</span><div><b>ChatGPT</b><span>Copy, research and ad angles</span></div></div>
+      <div class="tool"><span class="mono" style="--c:#cc785c">C</span><div><b>Claude</b><span>Long-form writing, ebooks and analysis</span></div></div>
+      <div class="tool"><span class="mono" style="--c:#4285f4">F</span><div><b>Google Flow</b><span>AI image and video workspace</span></div></div>
+      <div class="tool"><span class="mono" style="--c:#f9ab00;--t:#0b1218">N</span><div><b>Nano Banana Pro</b><span>Consistent AI characters and posters</span></div></div>
+      <div class="tool"><span class="mono" style="--c:#34a853">V</span><div><b>Veo 3.1</b><span>8-second UGC video with Malay dialogue</span></div></div>
+      <div class="tool"><span class="mono" style="--c:#eef3f5;--t:#0b1218">11</span><div><b>ElevenLabs</b><span>Malay AI voiceover</span></div></div>
+      <div class="tool"><span class="mono" style="--c:#2b2b2b;--t:#eef3f5">W</span><div><b>Whisper</b><span>Speech-to-text for word-timed captions</span></div></div>
+      <div class="tool"><span class="mono" style="--c:#7d2ae8">Ca</span><div><b>Canva AI</b><span>Ad visuals, posters and page designs</span></div></div>
+      <div class="tool"><span class="mono" style="--c:#d97757">C</span><div><b>Claude Code</b><span>AI agents for content, reporting and posting</span></div></div>
+      <div class="tool"><span class="mono" style="--c:#0b84f3">R</span><div><b>Remotion</b><span>Video editing in code, captions and motion cards</span></div></div>
+      <div class="tool"><span class="mono" style="--c:#7c5cff">H</span><div><b>HyperFrames</b><span>HTML motion graphics for video</span></div></div>
+      <div class="tool"><span class="mono" style="--c:#3cc4b2;--t:#0b1218">M</span><div><b>MCP</b><span>Connects AI to Meta Ads data for reports</span></div></div>
+    </div>
+  </section>
+
+</div>
+
+<div class="creative-band" id="creative">
+  <div class="wrap">
+    <section>
+      <div class="sec-head">
+        <p class="label">Creative</p>
+        <h2>AI UGC ads and visuals I make</h2>
+        <p class="intro">Script, AI characters, image and video generation, captions and edit. Every AI actor is labelled on screen.</p>
+      </div>
+      <div class="pipeline" aria-label="Production pipeline">
+        <span>Script</span><i>→</i><span>Storyboard</span><i>→</i><span>Nano Banana Pro</span><i>→</i><span>Veo 3.1</span><i>→</i><span>Remotion edit</span><i>→</i><span>Meta Ads test</span>
+      </div>
+
+      <div class="reel">
+        <div class="reel-head"><h3>Ari</h3><span>AI ebook series · UGC, founder story and winning ads</span></div>
+        <div class="reel-row">
+        <div class="phone">
+          <div class="screen"><span class="tag">UGC · problem hook</span><video src="media/work/ugc-lucy.mp4" poster="media/work/ugc-lucy.jpg" autoplay muted loop playsinline preload="metadata" aria-label="AI UGC ad clip: frustrated business owner"></video></div>
+          <p><b>"Buntu" hook</b>Relatable pain in 3 seconds</p>
+        </div>
+        <div class="phone">
+          <div class="screen"><span class="tag">Founder story</span><video src="media/work/ugc-founder.mp4" poster="media/work/ugc-founder.jpg" autoplay muted loop playsinline preload="metadata" aria-label="AI founder-story ad clip"></video></div>
+          <p><b>Founder angle</b>Motion cards built in Remotion</p>
+        </div>
+        <div class="phone">
+          <div class="screen"><span class="tag">Winning ad</span><video src="media/work/ari-win-setup.mp4" poster="media/work/ari-win-setup.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Winning ad: setting up an AI agent on screen"></video></div>
+          <p><b>Setup Ejen AI</b>Screen demo, no coding</p>
+        </div>
+        <div class="phone">
+          <div class="screen"><span class="tag">Winning ad</span><video src="media/work/ari-win-pasukan.mp4" poster="media/work/ari-win-pasukan.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Winning ad: team of AI agents"></video></div>
+          <p><b>Pasukan Ejen AI</b>Four AI agents at work</p>
+        </div>
+        <img class="sq" src="media/work/ari-p1-hook.jpg" alt="Ari poster: problem hook" loading="lazy">
+        <img class="sq" src="media/work/ari-p3-cara.jpg" alt="Ari poster: three steps" loading="lazy">
+        <img class="sq" src="media/work/ari-p5-offer.jpg" alt="Ari poster: offer" loading="lazy">
+        </div>
+      </div>
+
+      <div class="reel">
+        <div class="reel-head"><h3>AKAR</h3><span>Herbal energy shot · video ads and product visuals</span></div>
+        <div class="reel-row">
+        <div class="phone">
+          <div class="screen"><span class="tag">Winning ad</span><img src="media/work/akar-win-podcast.jpg" alt="AKAR winning ad: podcast-style talk with a doctor"></div>
+          <p><b>Doctor podcast</b>Talk-show format, broad audience</p>
+        </div>
+        <div class="phone">
+          <div class="screen"><span class="tag">Podcast style</span><video src="media/work/akar-podcast.mp4" poster="media/work/akar-podcast.jpg" autoplay muted loop playsinline preload="metadata" aria-label="AKAR podcast-style video ad"></video></div>
+          <p><b>Podcast ad</b>Talk-show format</p>
+        </div>
+        <div class="phone">
+          <div class="screen"><span class="tag">Hook video</span><video src="media/work/akar-hook.mp4" poster="media/work/akar-hook.jpg" autoplay muted loop playsinline preload="metadata" aria-label="AKAR hook video ad"></video></div>
+          <p><b>Problem hook</b>Text-led video ad</p>
+        </div>
+        <img class="sq" src="media/work/akar-1.jpg" alt="AKAR visual: energy for men" loading="lazy">
+        <img class="sq" src="media/work/akar-2.jpg" alt="AKAR visual: herbal formula" loading="lazy">
+        <img class="sq" src="media/work/akar-3.jpg" alt="AKAR visual: more confident" loading="lazy">
+        <img class="sq" src="media/work/akar-4.jpg" alt="AKAR visual: liquid shot" loading="lazy">
+        <img class="sq" src="media/work/akar-5.jpg" alt="AKAR visual: 30 to 60 minutes" loading="lazy">
+        </div>
+      </div>
+
+      <div class="reel">
+        <div class="reel-head"><h3>Tonik Warisan Pelagat</h3><span>Herbal tonic · top 2 ads by purchases</span></div>
+        <div class="reel-row">
+        <figure class="sqw"><img class="sq" src="media/work/tonik-win-7.jpg" alt="Tonik winning ad: herbal versus instant comparison"><span class="win">80 purchases</span></figure>
+        <figure class="sqw"><img class="sq" src="media/work/tonik-win-6.jpg" alt="Tonik winning ad: Pelagat versus old excuses"><span class="win">74 purchases</span></figure>
+        </div>
+      </div>
+
+      <div class="reel">
+        <div class="reel-head"><h3>Forex 60 Saat</h3><span>Malay forex education series · around 100 videos, under 2 minutes each</span></div>
+        <div class="reel-row">
+        <div class="phone">
+          <div class="screen"><span class="tag">Ep 01</span><video src="media/work/fx-ep01.mp4" poster="media/work/fx-ep01.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Forex 60 Saat episode 1 clip"></video></div>
+          <p><b>Story hook</b>Real-life opener</p>
+        </div>
+        <div class="phone">
+          <div class="screen"><span class="tag">Ep 11</span><video src="media/work/fx-ep11.mp4" poster="media/work/fx-ep11.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Forex 60 Saat episode 11 clip"></video></div>
+          <p><b>Candlestick</b>Animated candles</p>
+        </div>
+        <div class="phone">
+          <div class="screen"><span class="tag">Ep 16</span><video src="media/work/fx-ep16.mp4" poster="media/work/fx-ep16.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Forex 60 Saat episode 16 clip"></video></div>
+          <p><b>Chart patterns</b>Double top, drawn live</p>
+        </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="wrap">
+  <section id="projects">
+    <div class="sec-head"><p class="label">Projects</p><h2>Selected work</h2></div>
+    <div class="projects">
+      <article class="proj">
+        <span class="name">META ADS · SALES</span>
+        <h3>AKAR</h3>
+        <p class="where">Herbal energy shot, direct online sales</p>
+        <p class="ach"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4zM7 6H4v1a3 3 0 0 0 3 3M17 6h3v1a3 3 0 0 1-3 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>3.8x ROAS</b> · RM959k in sales from RM252k ad spend</span></p>
+        <ul>
+          <li>Broad, UGC, podcast-style, English and Indonesian-language creative tests.</li>
+          <li>Separate scaling campaigns with ROAS and cost-cap bidding.</li>
+          <li>Funnel and Pixel review from ad to thank-you page.</li>
+        </ul>
+        <div class="stats">
+          <div class="stat"><b>3.8x</b><span>ROAS</span></div>
+          <div class="stat"><b>RM959k</b><span>sales</span></div>
+          <div class="stat"><b>RM252k</b><span>ad spend</span></div>
+        </div>
+      </article>
+
+      <article class="proj">
+        <span class="name">META ADS · SALES</span>
+        <h3>Tonik Warisan Pelagat</h3>
+        <p class="where">Herbal tonic, direct online sales</p>
+        <p class="ach"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4zM7 6H4v1a3 3 0 0 0 3 3M17 6h3v1a3 3 0 0 1-3 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>2.7x ROAS</b> · RM26.1k in sales from RM9.7k ad spend</span></p>
+        <ul>
+          <li>Sales campaign run alongside AKAR in a shared account.</li>
+          <li>Cost-per-result bands set from the product's own price, so it's judged against its own target.</li>
+        </ul>
+        <div class="stats">
+          <div class="stat"><b>2.7x</b><span>ROAS</span></div>
+          <div class="stat"><b>RM26.1k</b><span>sales</span></div>
+          <div class="stat"><b>RM9.7k</b><span>ad spend</span></div>
+        </div>
+      </article>
+
+      <article class="proj wide">
+        <span class="name">AI UGC · META ADS</span>
+        <h3>Ari</h3>
+        <p class="where">AI ebook series for Malaysian SMEs</p>
+        <p class="ach"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4zM7 6H4v1a3 3 0 0 0 3 3M17 6h3v1a3 3 0 0 1-3 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>100+ AI UGC video ads</b> and 10+ AI characters produced</span></p>
+        <div class="thumbs">
+          <img src="media/work/ari-p1-hook.jpg" alt="">
+          <img src="media/work/ugc-lucy.jpg" alt="">
+          <img src="media/work/ari-p3-cara.jpg" alt="">
+          <img src="media/work/ugc-founder.jpg" alt="">
+        </div>
+        <ul>
+          <li>Built the full creative system: AI characters, UGC video ads, founder-story videos and static posters.</li>
+          <li>Planned Meta Ads tests by angle (problem, proof, founder), retargeting, and manual setup against Advantage+.</li>
+          <li>Wrote the landing page audit and redesign: structure, pricing, checkout flow and Pixel spec.</li>
+        </ul>
+        <div class="stats">
+          <div class="stat"><b>100+</b><span>AI UGC video ads</span></div>
+          <div class="stat"><b>10+</b><span>AI characters</span></div>
+          <div class="stat"><b>5</b><span>poster formats</span></div>
+        </div>
+      </article>
+
+      <article class="proj">
+        <span class="name">F&amp;B · MESSAGES · META ADS</span>
+        <h3>Big Galley's Cafe</h3>
+        <p class="where">Platters, northern Peninsular Malaysia</p>
+        <p class="ach"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4zM7 6H4v1a3 3 0 0 0 3 3M17 6h3v1a3 3 0 0 1-3 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>65,000+ menu page visits</b> at RM0.05 each</span></p>
+        <ul>
+          <li>Measured on WhatsApp and Messenger orders, not clicks.</li>
+          <li>Built a message-funnel reporting view with colour rules for conversations, CPM, frequency and CTR.</li>
+          <li>Found where orders went untracked and planned the fix.</li>
+        </ul>
+      </article>
+
+      <article class="proj">
+        <span class="name">BRIGHTSTAR · LAUNCH · RETAIL</span>
+        <h3>Megastore 2 &amp; ROG Ally launches</h3>
+        <p class="where">Brightstar Computer, Kuala Lumpur · 2022–2024</p>
+        <p class="ach"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4zM7 6H4v1a3 3 0 0 0 3 3M17 6h3v1a3 3 0 0 1-3 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>5,000+ customers</b> walked in on Megastore 2 opening day</span></p>
+        <ul>
+          <li>Grand opening campaign with guerrilla social content, KOLs and paid media; full control of the budget.</li>
+          <li>Social and ads for the ASUS ROG Ally launch in Malaysia.</li>
+          <li>Campaigns with ASUS, MSI, AMD, Intel, HP, Lenovo, GIGABYTE, Razer and Logitech.</li>
+        </ul>
+        <div class="stats">
+          <div class="stat"><b>5,000+</b><span>walk-ins on day one</span></div>
+          <div class="stat"><b>20</b><span>outlets</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section id="services">
+    <div class="sec-head"><p class="label">What I do</p><h2>From the first ad to the last checkout click</h2></div>
+    <div class="services">
+      <div class="svc">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></span>
+        <h3>Paid ads</h3>
+        <p>Structure, audiences, creative testing, budgets, automated rules and weekly reporting.</p>
+        <div class="tags"><span>Meta</span><span>Google</span><span>TikTok</span><span>X</span><span>LinkedIn</span><span>Douyin</span><span>XHS</span><span>Kwai</span><span>Lemon8</span></div>
+      </div>
+      <div class="svc">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="14" height="14" rx="2"/><path d="M17 10l4-2v8l-4-2"/></svg></span>
+        <h3>AI UGC video</h3>
+        <p>Script, AI characters, image and video generation, voiceover and edit.</p>
+        <div class="tags"><span>Flow</span><span>Veo 3.1</span><span>Remotion</span></div>
+      </div>
+      <div class="svc">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span>
+        <h3>Landing pages</h3>
+        <p>Sales page design, checkout flow and Pixel events from page view to purchase.</p>
+        <div class="tags"><span>HTML/CSS</span><span>WordPress</span><span>Pixel</span></div>
+      </div>
+      <div class="svc">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 9l-4 3 4 3M16 9l4 3-4 3M14 5l-4 14"/></svg></span>
+        <h3>AI automation</h3>
+        <p>Content agents, a Threads auto-poster, WhatsApp Business API follow-ups.</p>
+        <div class="tags"><span>Python</span><span>TypeScript</span><span>Claude Code</span></div>
+      </div>
+    </div>
+
+    <div class="sec-head" style="margin-top:3.5rem"><p class="label">How I read a campaign</p></div>
+    <div class="funnel" role="list">
+      <div class="stage" role="listitem"><span class="n">01 · HOOK</span><b>Stop the scroll</b><span class="m">Hook rate, CPM</span></div>
+      <div class="stage" role="listitem"><span class="n">02 · CLICK</span><b>Earn the click</b><span class="m">Link CTR, CPC</span></div>
+      <div class="stage" role="listitem"><span class="n">03 · LAND</span><b>Load and hold</b><span class="m">LPV, cost per LPV</span></div>
+      <div class="stage" role="listitem"><span class="n">04 · CHECKOUT</span><b>Start the order</b><span class="m">Add to cart, checkout</span></div>
+      <div class="stage" role="listitem"><span class="n">05 · PURCHASE</span><b>Close the sale</b><span class="m">CPA, ROAS</span></div>
+    </div>
+    <p class="funnel-note">I colour-code every stage against targets set from the product's price, then fix the weakest stage first: the creative, the page or the checkout.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section id="career">
+    <div class="sec-head"><p class="label">Career</p><h2>Eight years, from marketplace stores to paid media and AI</h2></div>
+    <div class="track">
+      <div class="step"><span class="yr">2017</span><b>Brightstar Computer</b><span>Business dev &amp; marketplace stores</span><em class="ach-line">Ran 4 marketplace stores: Lazada, Shopee, Lelong, 11street</em></div>
+      <div class="step"><span class="yr">2019</span><b>Hive Marketing</b><span>Social media community manager</span></div>
+      <div class="step"><span class="yr">2020</span><b>Rainbow Distribution · Extra Natural</b><span>Ecommerce lead</span></div>
+      <div class="step"><span class="yr">2022</span><b>Brightstar Computer</b><span>Asst. Manager, Digital Marketing</span><em class="ach-line">5,000+ walk-ins at Megastore 2 launch</em></div>
+      <div class="step"><span class="yr">2024</span><b>Bread2Butter</b><span>Performance marketing, EU · CN · BR</span></div>
+      <div class="step now"><span class="yr">2026 · now</span><b>Freelance</b><span>Performance marketing &amp; AI</span><em class="ach-line">RM985k sales at 3.7x ROAS</em></div>
+    </div>
+    <div class="certs">
+      <a class="cert" href="https://coursera.org/verify/2012ZDSTBGJ0" target="_blank" rel="noopener"><i aria-hidden="true">✓</i>Google AI Fundamentals <small>2026</small></a>
+      <a class="cert" href="https://coursera.org/verify/CGFAG514TTEF" target="_blank" rel="noopener"><i aria-hidden="true">✓</i>MyDIGITAL Digital Transformation <small>2026</small></a>
+      <span class="cert"><i aria-hidden="true">✓</i>Google Digital Garage <small>2023</small></span>
+    </div>
+  </section>
+</div>
+
+<div class="contact-band">
+  <div class="wrap">
+    <section id="contact">
+      <p class="label">Contact</p>
+      <h2>Need someone to make your ads <span>pay back?</span></h2>
+      <div class="mail">
+        <span class="addr" id="addr">izzatazmar@gmail.com</span>
+        <button class="btn hi" id="copy" type="button">Copy email</button>
+        <a class="btn ghost" href="mailto:izzatazmar@gmail.com">Open mail app</a>
+      </div>
+      <p class="copied" id="copied" aria-live="polite"></p>
+    </section>
+    <footer>Muhammad Izzat Naimullah · Kuala Lumpur, Malaysia</footer>
+  </div>
+</div>
+</div>
+
+<script>
+// Continuous background: one fixed canvas behind the whole page. Grid and growth line scroll with the page,
+// glows drift over time, and the colour balance shifts from teal toward amber as you scroll down.
+(function () {
+  var c = document.getElementById('bg'), ctx = c.getContext('2d');
+  if (!ctx) return;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var w = 0, h = 0, dpr = 1;
+  function size() {
+    dpr = Math.min(2, window.devicePixelRatio || 1);
+    w = window.innerWidth; h = window.innerHeight;
+    c.width = Math.round(w * dpr); c.height = Math.round(h * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  function wave(x) { return Math.sin(x * 0.011) * 0.5 + Math.sin(x * 0.027 + 1.3) * 0.3 + Math.sin(x * 0.005 + 4) * 0.2; }
+  function draw(t) {
+    var sy = window.scrollY || 0;
+    var max = Math.max(1, document.documentElement.scrollHeight - h);
+    var p = Math.min(1, sy / max);
+    ctx.fillStyle = '#0b1218';
+    ctx.fillRect(0, 0, w, h);
+
+    // drifting glows
+    var orbs = [
+      { r: 60, g: 196, b: 178, a: 0.34 * (1 - p * 0.4), sx: 0.22, sy: 0.25, ph: 0 },
+      { r: 232, g: 169, b: 58, a: 0.14 + 0.20 * p, sx: 0.78, sy: 0.6, ph: 2.1 },
+      { r: 70, g: 120, b: 230, a: 0.22, sx: 0.5, sy: 0.95, ph: 4.2 }
+    ];
+    orbs.forEach(function (o) {
+      var x = w * (o.sx + 0.12 * Math.sin(t * 0.00011 + o.ph));
+      var y = h * (o.sy + 0.10 * Math.cos(t * 0.00009 + o.ph)) - (sy * 0.08) % (h * 0.5);
+      var rad = Math.max(w, h) * 0.55;
+      var g = ctx.createRadialGradient(x, y, 0, x, y, rad);
+      g.addColorStop(0, 'rgba(' + o.r + ',' + o.g + ',' + o.b + ',' + o.a + ')');
+      g.addColorStop(1, 'rgba(' + o.r + ',' + o.g + ',' + o.b + ',0)');
+      ctx.fillStyle = g;
+      ctx.fillRect(0, 0, w, h);
+    });
+
+    // grid that scrolls with the page
+    var cell = 64, off = -(sy * 0.35) % cell;
+    ctx.strokeStyle = 'rgba(255,255,255,0.08)';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    for (var gx = 0.5; gx < w; gx += cell) { ctx.moveTo(gx, 0); ctx.lineTo(gx, h); }
+    for (var gy = off + 0.5; gy < h; gy += cell) { ctx.moveTo(0, gy); ctx.lineTo(w, gy); }
+    ctx.stroke();
+
+    // growth line: flows sideways with scroll and time, trending upward
+    var shift = sy * 0.6 + t * 0.02;
+    [{ base: 0.72, amp: 0.10, col: 'rgba(60,196,178,0.55)', k: 0 }, { base: 0.82, amp: 0.07, col: 'rgba(232,169,58,0.38)', k: 400 }].forEach(function (L) {
+      ctx.strokeStyle = L.col;
+      ctx.lineWidth = 2.5;
+      ctx.beginPath();
+      for (var x = 0; x <= w; x += 8) {
+        var trend = (x / w) * 0.22;
+        var yv = h * (L.base - trend + L.amp * wave(x + shift + L.k));
+        if (x === 0) ctx.moveTo(x, yv); else ctx.lineTo(x, yv);
+      }
+      ctx.stroke();
+    });
+  }
+  var running = false;
+  function loop(t) { draw(t); if (running) requestAnimationFrame(loop); }
+  function start() { if (!running && !reduce) { running = true; requestAnimationFrame(loop); } }
+  size();
+  draw(0);
+  window.addEventListener('resize', function () { size(); draw(performance.now()); });
+  if (reduce) {
+    window.addEventListener('scroll', function () { draw(0); }, { passive: true });
+  } else {
+    start();
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) running = false; else start();
+    });
+  }
+})();
+
+(function () {
+  // Respect reduced motion: hold videos on their poster frame
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('video').forEach(function (v) { v.removeAttribute('autoplay'); v.pause(); v.controls = true; });
+  }
+})();
+
+document.getElementById('copy').addEventListener('click', function () {
+  var out = document.getElementById('copied');
+  var text = document.getElementById('addr').textContent;
+  function fallback() {
+    var r = document.createRange();
+    r.selectNodeContents(document.getElementById('addr'));
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    out.textContent = 'Selected. Press Ctrl/Cmd + C to copy.';
+  }
+  try {
+    navigator.clipboard.writeText(text).then(function () { out.textContent = 'Email copied.'; }, fallback);
+  } catch (e) { fallback(); }
+});
+</script>
+
+</html>
