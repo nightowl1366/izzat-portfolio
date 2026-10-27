@@ -199,6 +199,10 @@ details.table-view summary { cursor: pointer; color: var(--muted); }
 .proj-media figure { margin: 0; display: grid; gap: 0.3rem; min-width: 0; }
 .proj-media video { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; display: block; background: #05090c; }
 .proj-media figcaption { color: var(--muted); font-size: 0.8125rem; }
+.proj-shots { margin: 0; display: grid; grid-template-columns: minmax(0, 3.26fr) minmax(0, 1fr); gap: 0.5rem; }
+.proj-shots img { width: 100%; height: auto; display: block; border-radius: 8px; border: 1px solid var(--line); background: #05090c; }
+.proj-shots figcaption { grid-column: 1 / -1; color: var(--muted); font-size: 0.8125rem; }
+@media (max-width: 560px) { .proj-shots { grid-template-columns: minmax(0, 1fr); } .proj-shots img + img { display: none; } }
 
 /* Services */
 .services { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
@@ -240,7 +244,7 @@ details.table-view summary { cursor: pointer; color: var(--muted); }
 .tool { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 1rem 1.1rem; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0.85rem; align-items: start; min-width: 0; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); transition: transform .25s ease, border-color .25s ease; }
 .tool:hover { transform: translateY(-3px); border-color: color-mix(in srgb, var(--c, var(--accent)) 55%, transparent); }
 .tool-grid.platforms { grid-template-columns: repeat(5, minmax(0, 1fr)); }
-.tool-grid.platforms .tool.main { grid-column: span 2; }
+.tool-grid.platforms .tool.main, .tool-grid.platforms .tool.wide { grid-column: span 2; }
 .tool .mono { width: 2.5rem; height: 2.5rem; border-radius: 10px; background: var(--c); color: var(--t, #fff); display: grid; place-items: center; font-family: var(--display); font-weight: 800; font-size: 1.05rem; }
 .tool b { display: block; font-family: var(--display); font-size: 1.0625rem; font-weight: 700; line-height: 1.25; }
 .tool > div > span { display: block; color: var(--muted); font-size: 0.875rem; line-height: 1.45; margin-top: 0.15rem; }
@@ -278,7 +282,7 @@ footer { padding-block: 1.5rem 3rem; color: var(--ink-muted); font-size: 0.8125r
   .services { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .tool-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .tool-grid.platforms { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .tool-grid.platforms .tool.main { grid-column: 1 / -1; }
+  .tool-grid.platforms .tool.main, .tool-grid.platforms .tool.wide { grid-column: 1 / -1; }
 }
 @media (max-width: 560px) {
   .tool-grid, .tool-grid.platforms { grid-template-columns: minmax(0, 1fr); }
@@ -387,8 +391,12 @@ footer { padding-block: 1.5rem 3rem; color: var(--ink-muted); font-size: 0.8125r
     <h3 class="tool-head">Ad platforms</h3>
     <div class="tool-grid platforms">
       <div class="tool main"><span class="mono" style="--c:#0866ff">M</span><div><b>Meta Ads</b><span>Facebook &amp; Instagram · my main platform</span><div class="tags"><span>ABO · CBO</span><span>Advantage+</span><span>Cost cap · ROAS goal</span><span>Pixel + CAPI</span><span>Automated rules</span><span>Click-to-WhatsApp</span><span>Meta for Developers · Graph &amp; Marketing API</span></div></div></div>
-      <div class="tool"><span class="mono" style="--c:#4285f4">G</span><div><b>Google Ads</b><span>Search (SEM) and display campaigns</span><div class="tags"><span>SEO</span><span>SEM</span><span>GEO</span><span>AEO</span></div></div></div>
+      <div class="tool wide"><span class="mono" style="--c:#4285f4">G</span><div><b>Google Ads</b><span>Search (SEM), display and YouTube video campaigns</span><div class="tags"><span>SEO</span><span>SEM</span><span>GEO</span><span>AEO</span><span>YouTube Ads</span></div></div></div>
       <div class="tool"><span class="mono" style="--c:#111;--t:#25f4ee">T</span><div><b>TikTok Ads</b><span>In-feed video ads and GMV Max for TikTok Shop</span></div></div>
+      <div class="tool"><span class="mono" style="--c:#ee4d2d">S</span><div><b>Shopee Ads</b><span>Marketplace ads in Shopee Seller Centre</span></div></div>
+      <div class="tool"><span class="mono" style="--c:#0f146d;--t:#f57224">La</span><div><b>Lazada Sponsored</b><span>Sponsored Solutions marketplace ads</span></div></div>
+      <div class="tool"><span class="mono" style="--c:#00b14f">Gr</span><div><b>Grab Ads</b><span>In-app ads on Grab</span></div></div>
+      <div class="tool"><span class="mono" style="--c:#00809d">B</span><div><b>Microsoft Ads</b><span>Bing search campaigns</span></div></div>
       <div class="tool"><span class="mono" style="--c:#000;--t:#fff">X</span><div><b>X Ads</b><span>Promoted posts</span></div></div>
       <div class="tool"><span class="mono" style="--c:#0a66c2">in</span><div><b>LinkedIn Ads</b><span>B2B campaigns</span></div></div>
       <div class="tool"><span class="mono" style="--c:#111;--t:#fe2c55">抖</span><div><b>Douyin</b><span>China short video, via Ocean Engine</span></div></div>
@@ -625,6 +633,23 @@ footer { padding-block: 1.5rem 3rem; color: var(--ink-muted); font-size: 0.8125r
           <li>Publishes to multiple Threads profiles through Meta's official Graph API.</li>
           <li>OAuth sign-in with token-expiry alerts and a health view for each profile.</li>
           <li>Publishing queue with rate-limit-aware scheduling, kept under Meta's caps of 250 posts and 1,000 replies per profile per day.</li>
+        </ul>
+        <figure class="proj-shots">
+          <img src="media/work/omni-desktop.jpg" width="1600" height="622" loading="lazy" alt="OmniThreads fleet cockpit on desktop: account, publish and queue counts with the Meta API limits per profile">
+          <img src="media/work/omni-phone.jpg" width="600" height="760" loading="lazy" alt="The same fleet cockpit on a phone">
+          <figcaption>OmniThreads fleet cockpit</figcaption>
+        </figure>
+      </article>
+
+      <article class="proj wide">
+        <span class="name">PRODUCT · AI ANALYTICS</span>
+        <h3>Social Pulse Analytics</h3>
+        <p class="where">Political-narrative monitoring platform for Malaysia: product concept, dashboard design and investor deck</p>
+        <ul>
+          <li>Live narrative map that groups public posts from X, Facebook, TikTok, Instagram, YouTube and Threads by topic, sentiment, reach and momentum.</li>
+          <li>A SHIELD layer that flags disinformation and coordinated bot clusters, scores account authenticity from public behaviour, and recommends a factual correction within six hours.</li>
+          <li>Ethics set in the design: public posts only, sentiment at group level rather than individual profiles, and detection only, never deployment.</li>
+          <li>Planned to run on private AI on the agency's own hardware, with an 18-month build plan, cost model and licensing model.</li>
         </ul>
       </article>
     </div>
