@@ -3,7 +3,6 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta charset="utf-8">
 <title>Izzat Naimullah Portfolio</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Muhammad Izzat Naimullah: performance marketer in Kuala Lumpur. Meta Ads results, AI UGC video ads, landing pages and launches.">
@@ -199,10 +198,11 @@ details.table-view summary { cursor: pointer; color: var(--muted); }
 .proj-media figure { margin: 0; display: grid; gap: 0.3rem; min-width: 0; }
 .proj-media video { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; display: block; background: #05090c; }
 .proj-media figcaption { color: var(--muted); font-size: 0.8125rem; }
-.proj-shots { margin: 0; display: grid; grid-template-columns: minmax(0, 3.26fr) minmax(0, 1fr); gap: 0.5rem; }
-.proj-shots img { width: 100%; height: auto; display: block; border-radius: 8px; border: 1px solid var(--line); background: #05090c; }
+.proj-shots { margin: 0; display: grid; grid-template-columns: minmax(0, 3.12fr) minmax(0, 1fr); gap: 0.5rem; }
+.proj-shots img { width: 100%; height: auto; display: block; border-radius: 8px; box-shadow: 0 0 0 1px var(--line); background: #05090c; }
 .proj-shots figcaption { grid-column: 1 / -1; color: var(--muted); font-size: 0.8125rem; }
-@media (max-width: 560px) { .proj-shots { grid-template-columns: minmax(0, 1fr); } .proj-shots img + img { display: none; } }
+.proj-shots.one { grid-template-columns: minmax(0, 1fr); max-width: 760px; }
+@media (max-width: 560px) { .proj-shots { grid-template-columns: minmax(0, 1fr); } .proj-shots:not(.one) img:first-of-type { display: none; } .proj-shots:not(.one) img + img { max-width: 320px; } }
 
 /* Services */
 .services { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
@@ -283,6 +283,7 @@ footer { padding-block: 1.5rem 3rem; color: var(--ink-muted); font-size: 0.8125r
   .tool-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .tool-grid.platforms { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .tool-grid.platforms .tool.main, .tool-grid.platforms .tool.wide { grid-column: 1 / -1; }
+  .tool-grid.platforms .tool:last-child { grid-column: 1 / -1; }
 }
 @media (max-width: 560px) {
   .tool-grid, .tool-grid.platforms { grid-template-columns: minmax(0, 1fr); }
@@ -626,31 +627,35 @@ footer { padding-block: 1.5rem 3rem; color: var(--ink-muted); font-size: 0.8125r
       </article>
 
       <article class="proj wide">
-        <span class="name">AUTOMATION · META GRAPH API</span>
+        <span class="name">AUTOMATION · THREADS API</span>
         <h3>OmniThreads</h3>
         <p class="where">Threads publishing dashboard, designed and built from scratch</p>
         <ul>
-          <li>Publishes to multiple Threads profiles through Meta's official Graph API.</li>
+          <li>Publishes to multiple Threads profiles through Meta's official Threads API.</li>
           <li>OAuth sign-in with token-expiry alerts and a health view for each profile.</li>
           <li>Publishing queue with rate-limit-aware scheduling, kept under Meta's caps of 250 posts and 1,000 replies per profile per day.</li>
         </ul>
         <figure class="proj-shots">
-          <img src="media/work/omni-desktop.jpg" width="1600" height="622" loading="lazy" alt="OmniThreads fleet cockpit on desktop: account, publish and queue counts with the Meta API limits per profile">
-          <img src="media/work/omni-phone.jpg" width="600" height="760" loading="lazy" alt="The same fleet cockpit on a phone">
-          <figcaption>OmniThreads fleet cockpit</figcaption>
+          <img src="media/work/omni-cockpit-desktop.jpg" width="1600" height="649" loading="lazy" alt="OmniThreads publishing dashboard on desktop, sample data: account, publish and queue counts with the Meta API limits per profile">
+          <img src="media/work/omni-cockpit-phone.jpg" width="600" height="760" loading="lazy" alt="The same dashboard on a phone, sample data">
+          <figcaption>OmniThreads publishing dashboard · sample data</figcaption>
         </figure>
       </article>
 
       <article class="proj wide">
         <span class="name">PRODUCT · AI ANALYTICS</span>
         <h3>Social Pulse Analytics</h3>
-        <p class="where">Political-narrative monitoring platform for Malaysia: product concept, dashboard design and investor deck</p>
+        <p class="where">Concept for a political-narrative monitoring platform in Malaysia: product design, dashboard mockup and investor deck</p>
         <ul>
-          <li>Live narrative map that groups public posts from X, Facebook, TikTok, Instagram, YouTube and Threads by topic, sentiment, reach and momentum.</li>
-          <li>A SHIELD layer that flags disinformation and coordinated bot clusters, scores account authenticity from public behaviour, and recommends a factual correction within six hours.</li>
-          <li>Ethics set in the design: public posts only, sentiment at group level rather than individual profiles, and detection only, never deployment.</li>
-          <li>Planned to run on private AI on the agency's own hardware, with an 18-month build plan, cost model and licensing model.</li>
+          <li>Designed a live narrative map that groups public posts from X, Facebook, TikTok, Instagram, YouTube and Threads by topic, sentiment, reach and momentum.</li>
+          <li>Designed a SHIELD layer to flag disinformation and coordinated bot clusters, score account authenticity from public behaviour, and push a factual correction within six hours.</li>
+          <li>Ethics set in the design: public posts only, sentiment at group level rather than individual profiles, and it detects manipulation but never creates it.</li>
+          <li>Planned to run on private AI on in-house servers; the deck covers an 18-month build plan, cost model and licence pricing.</li>
         </ul>
+        <figure class="proj-shots one">
+          <img src="media/work/social-pulse-cover.jpg" width="1600" height="900" loading="lazy" alt="Social Pulse Analytics investor deck cover: Malaysia political intelligence with the SHIELD built in">
+          <figcaption>Investor deck cover · concept mockup</figcaption>
+        </figure>
       </article>
     </div>
   </section>
@@ -664,13 +669,13 @@ footer { padding-block: 1.5rem 3rem; color: var(--ink-muted); font-size: 0.8125r
         <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></span>
         <h3>Paid ads</h3>
         <p>Structure, audiences, creative testing, budgets, automated rules and weekly reporting.</p>
-        <div class="tags"><span>Meta</span><span>Google</span><span>TikTok</span><span>X</span><span>LinkedIn</span><span>Douyin</span><span>XHS</span><span>Kwai</span><span>Lemon8</span></div>
+        <div class="tags"><span>Meta</span><span>Google</span><span>TikTok</span><span>Shopee</span><span>Lazada</span><span>Grab</span><span>Microsoft</span><span>X</span><span>LinkedIn</span><span>Douyin</span><span>XHS</span><span>Kwai</span><span>Lemon8</span></div>
       </div>
       <div class="svc">
         <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="14" height="14" rx="2"/><path d="M17 10l4-2v8l-4-2"/></svg></span>
         <h3>AI UGC video</h3>
-        <p>Script, AI characters, image and video generation, voiceover and edit.</p>
-        <div class="tags"><span>Flow</span><span>Veo 3.1</span><span>Remotion</span></div>
+        <p>Script, AI characters, image and video generation, voiceover and edit, plus AI live UGC.</p>
+        <div class="tags"><span>Flow</span><span>Veo 3.1</span><span>Remotion</span><span>AI live UGC</span></div>
       </div>
       <div class="svc">
         <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span>
