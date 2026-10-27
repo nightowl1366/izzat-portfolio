@@ -198,11 +198,12 @@ details.table-view summary { cursor: pointer; color: var(--muted); }
 .proj-media figure { margin: 0; display: grid; gap: 0.3rem; min-width: 0; }
 .proj-media video { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; display: block; background: #05090c; }
 .proj-media figcaption { color: var(--muted); font-size: 0.8125rem; }
-.proj-shots { margin: 0; display: grid; grid-template-columns: minmax(0, 3.12fr) minmax(0, 1fr); gap: 0.5rem; }
+.proj-shots { margin: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 0.5rem; }
+.proj-shots.pair { grid-template-columns: minmax(0, 3.12fr) minmax(0, 1fr); }
+.proj-shots.two img + img { max-width: 480px; }
 .proj-shots img { width: 100%; height: auto; display: block; border-radius: 8px; box-shadow: 0 0 0 1px var(--line); background: #05090c; }
 .proj-shots figcaption { grid-column: 1 / -1; color: var(--muted); font-size: 0.8125rem; }
-.proj-shots.one { grid-template-columns: minmax(0, 1fr); max-width: 760px; }
-@media (max-width: 560px) { .proj-shots { grid-template-columns: minmax(0, 1fr); } .proj-shots:not(.one) img:first-of-type { display: none; } .proj-shots:not(.one) img + img { max-width: 320px; } }
+@media (max-width: 560px) { .proj-shots.pair { grid-template-columns: minmax(0, 1fr); } .proj-shots.pair img:first-of-type { display: none; } .proj-shots.pair img + img { max-width: 320px; } }
 
 /* Services */
 .services { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
@@ -635,7 +636,7 @@ footer { padding-block: 1.5rem 3rem; color: var(--ink-muted); font-size: 0.8125r
           <li>OAuth sign-in with token-expiry alerts and a health view for each profile.</li>
           <li>Publishing queue with rate-limit-aware scheduling, kept under Meta's caps of 250 posts and 1,000 replies per profile per day.</li>
         </ul>
-        <figure class="proj-shots">
+        <figure class="proj-shots pair">
           <img src="media/work/omni-cockpit-desktop.jpg" width="1600" height="649" loading="lazy" alt="OmniThreads publishing dashboard on desktop, sample data: account, publish and queue counts with the Meta API limits per profile">
           <img src="media/work/omni-cockpit-phone.jpg" width="600" height="760" loading="lazy" alt="The same dashboard on a phone, sample data">
           <figcaption>OmniThreads publishing dashboard · sample data</figcaption>
@@ -652,9 +653,10 @@ footer { padding-block: 1.5rem 3rem; color: var(--ink-muted); font-size: 0.8125r
           <li>Ethics set in the design: public posts only, sentiment at group level rather than individual profiles, and it detects manipulation but never creates it.</li>
           <li>Planned to run on private AI on in-house servers; the deck covers an 18-month build plan, cost model and licence pricing.</li>
         </ul>
-        <figure class="proj-shots one">
+        <figure class="proj-shots two">
+          <img src="media/work/social-pulse-map.jpg" width="1600" height="884" loading="lazy" alt="Social Pulse narrative map mockup, sample data: sentiment pins over Malaysia sized by reach, with callouts for RON95 subsidy backlash, cost-of-living anger and Sabah/Sarawak autonomy">
           <img src="media/work/social-pulse-cover.jpg" width="1600" height="900" loading="lazy" alt="Social Pulse Analytics investor deck cover: Malaysia political intelligence with the SHIELD built in">
-          <figcaption>Investor deck cover · concept mockup</figcaption>
+          <figcaption>Narrative map and investor deck cover · concept mockup, sample data</figcaption>
         </figure>
       </article>
     </div>
