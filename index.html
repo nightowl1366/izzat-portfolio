@@ -203,6 +203,11 @@ details.table-view summary { cursor: pointer; color: var(--muted); }
 .proj-shots.two img + img { max-width: 480px; }
 .proj-shots img { width: 100%; height: auto; display: block; border-radius: 8px; box-shadow: 0 0 0 1px var(--line); background: #05090c; }
 .proj-shots figcaption { grid-column: 1 / -1; color: var(--muted); font-size: 0.8125rem; }
+.proj-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.5rem; }
+.proj-gallery figure { margin: 0; display: grid; gap: 0.3rem; min-width: 0; align-content: start; }
+.proj-gallery img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 8px; display: block; background: #05090c; }
+.proj-gallery figcaption { color: var(--muted); font-size: 0.8125rem; }
+@media (max-width: 560px) { .proj-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 560px) { .proj-shots.pair { grid-template-columns: minmax(0, 1fr); } .proj-shots.pair img:first-of-type { display: none; } .proj-shots.pair img + img { max-width: 320px; } }
 
 /* Services */
@@ -659,11 +664,37 @@ footer { padding-block: 1.5rem 3rem; color: var(--ink-muted); font-size: 0.8125r
         </ul>
         <div class="proj-media">
           <figure><video src="media/work/bstar-rog-roadshow.mp4" poster="media/work/bstar-rog-roadshow.jpg" autoplay muted loop playsinline preload="metadata" aria-label="ASUS ROG Ally first experiential roadshow in Malaysia"></video><figcaption>ROG Ally roadshow, Malaysia</figcaption></figure>
-          <figure><video src="media/work/bstar-megastore.mp4" poster="media/work/bstar-megastore.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Brightstar Megastore opening content"></video><figcaption>Brightstar Megastore content</figcaption></figure>
+          <figure><video src="media/work/bstar-megastore-queue.mp4" poster="media/work/bstar-megastore-queue.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Crowds queuing at IOI City Mall for the Brightstar megastore grand opening, footage by Mobhouse"></video><figcaption>Megastore 2 opening-day queue · footage: Mobhouse</figcaption></figure>
         </div>
         <div class="stats">
           <div class="stat"><b>5,000+</b><span>walk-ins on day one</span></div>
           <div class="stat"><b>20</b><span>outlets</span></div>
+        </div>
+      </article>
+
+      <article class="proj wide">
+        <span class="name">BRIGHTSTAR · ROADSHOWS · POSM</span>
+        <h3>Mall roadshows, store events and POSM</h3>
+        <p class="where">Brightstar Computer · Plaza Low Yat and IOI City Mall · 2022–2023</p>
+        <ul>
+          <li>Led the digital marketing for 10 mall roadshows, from Intel's "Evolve with Intel" roadshow (Jun 2022) to the 13th Anniversary Year End Sales (Dec 2023), with partners such as Acer, ASUS, HP, Lenovo, MSI, Gigabyte, Intel and Logitech.</li>
+          <li>Produced event POSM across the roadshows: concourse backdrops, balloon arches, Spin &amp; Win wheels, A-boards, price-list easels, tent cards, feather flags and on-screen laptop price cards.</li>
+          <li>Built the pre-event push (an 8-day Facebook countdown, a guess-the-venue contest) and on-site hooks: flash sales, and free popcorn and cotton candy for visitors showing anything in Jalur Gemilang colours.</li>
+          <li>Launch of Malaysia's 1st Gigabyte (AORUS) flagship store at Plaza Low Yat: queue plan and a flash sale for the first 100 customers.</li>
+          <li>In-store brand POSM with Seagate, NVIDIA and Intel; Seagate's year-end promo sold 159 units against a 150-unit target.</li>
+        </ul>
+        <div class="proj-gallery">
+          <figure><img src="media/work/bstar-rs-crowd.jpg" width="800" height="600" loading="lazy" alt="Shoppers crowding the Brightstar counter and Spin and Win wheel at the IOI City Mall roadshow"><figcaption>Mega Sales roadshow, IOI City Mall · May 2023</figcaption></figure>
+          <figure><img src="media/work/bstar-rs-aerial.jpg" width="800" height="600" loading="lazy" alt="Aerial view of a busy Brightstar roadshow floor with brand counters at IOI City Mall"><figcaption>Roadshow floor from above, IOI City Mall</figcaption></figure>
+          <figure><img src="media/work/bstar-rs-arch.jpg" width="800" height="600" loading="lazy" alt="Blue and silver balloon arch with the 12th Anniversary banner at the Plaza Low Yat roadshow entrance"><figcaption>12th Anniversary arch, Plaza Low Yat · Nov 2022</figcaption></figure>
+          <figure><img src="media/work/bstar-rs-backdrop.jpg" width="800" height="600" loading="lazy" alt="Lit Mega Sales up to 80% off backdrop with partner logos at the Plaza Low Yat concourse"><figcaption>Mega Sales backdrop, Plaza Low Yat · Jul 2023</figcaption></figure>
+          <figure><img src="media/work/bstar-rs-aorus.jpg" width="800" height="600" loading="lazy" alt="AORUS flagship store front at Plaza Low Yat with lit signage and opening flowers"><figcaption>1st Gigabyte (AORUS) flagship store · 2023</figcaption></figure>
+          <figure><img src="media/work/bstar-rs-merdeka.jpg" width="800" height="600" loading="lazy" alt="Merdeka Sale up to 70% discount key visual with partner brand logos for IOI City Mall"><figcaption>Merdeka Sale key visual · Aug 2023</figcaption></figure>
+        </div>
+        <div class="stats">
+          <div class="stat"><b>10</b><span>mall roadshows</span></div>
+          <div class="stat"><b>144</b><span>brand price artworks, one roadshow</span></div>
+          <div class="stat"><b>159</b><span>Seagate units vs 150 target</span></div>
         </div>
       </article>
 
